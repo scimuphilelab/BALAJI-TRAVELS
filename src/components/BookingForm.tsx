@@ -108,7 +108,7 @@ export default function BookingForm() {
     e.preventDefault();
     if (!validate()) return;
 
-    const message = `🚗 *New Booking Request — Balaji Travels*
+    const message = `*Balaji Travels - New Booking Request*
 
 👤 *Name:* ${form.fullName}
 📞 *Phone:* ${form.phone}
@@ -203,12 +203,12 @@ _Sent via balajitravel.in_`;
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <InputField
-          id="pickUp" label="Pick Up From" placeholder="e.g. Shivaji Nagar, Pune"
+          id="pickUp" label="Pick Up From" placeholder="e.g. Rasulgarh, Bhubaneshwar"
           value={form.pickUp} onChange={setField('pickUp')}
           error={errors.pickUp} required
         />
         <InputField
-          id="destination" label="Destination" placeholder="e.g. Mumbai Airport"
+          id="destination" label="Destination" placeholder="e.g. Airport, Bhubaneshwar"
           value={form.destination} onChange={setField('destination')}
           error={errors.destination} required
         />
@@ -259,7 +259,7 @@ _Sent via balajitravel.in_`;
                 <span className="font-semibold text-[#1A1A2E] ml-1">{form.car}</span>
               </div>
             )}
-            {form.pickUp && (
+            {/* {form.pickUp && (
               <div>
                 <span className="text-[#5A6A8A]">Pickup:</span>
                 <span className="font-semibold text-[#1A1A2E] ml-1">{form.pickUp}</span>
@@ -270,7 +270,7 @@ _Sent via balajitravel.in_`;
                 <span className="text-[#5A6A8A]">To:</span>
                 <span className="font-semibold text-[#1A1A2E] ml-1">{form.destination}</span>
               </div>
-            )}
+            )} */}
             {form.journeyDate && (
               <div>
                 <span className="text-[#5A6A8A]">Date:</span>

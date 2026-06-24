@@ -54,7 +54,7 @@ const reasons = [
       </svg>
     ),
     title: 'Wide Coverage',
-    description: 'Pune city, outstation, Shirdi, Goa, Mumbai and beyond — we go wherever you need.',
+    description: 'Bhubaneswar city, outstation, Puri, Nayagarh, Cuttack and beyond — we go wherever you need.',
     gradient: 'from-[#EF4444]/15 to-[#EF4444]/5',
     color: '#EF4444',
     accent: '#EF4444',
