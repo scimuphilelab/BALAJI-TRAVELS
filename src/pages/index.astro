@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Fleet from '../components/Fleet';
+import WhyChooseUs from '../components/WhyChooseUs';
+import Testimonials from '../components/Testimonials';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+---
+
+<BaseLayout
+  title="Balaji Travels — Premium Car Rental in Pune | Outstation, Airport Transfers"
+  description="Book premium car rental services in Pune with Balaji Travels. Professional drivers, luxury fleet (Sedan, SUV, Luxury), outstation trips, airport transfers. 24/7 support, transparent pricing."
+  keywords="car rental Pune, outstation cab Pune, airport transfer Pune, luxury car hire, Toyota Innova Crysta rental, Balaji Travels, cab booking Pune, Shirdi trip Pune"
+>
+  <Navbar client:load />
+  <main id="main-content">
+    <Hero client:load />
+    <About />
+    <Fleet client:load />
+    <WhyChooseUs />
+    <Testimonials />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

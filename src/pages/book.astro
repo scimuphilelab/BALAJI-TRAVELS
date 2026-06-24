@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar';
+import BookingForm from '../components/BookingForm';
+import Footer from '../components/Footer';
+
+const carParam = Astro.url.searchParams.get('car') ?? '';
+---
+
+<BaseLayout
+  title={carParam ? `Book ${carParam} — Balaji Travels` : 'Book a Car — Balaji Travels Pune'}
+  description="Book your premium car rental with Balaji Travels in Pune. Fill in your journey details and send a WhatsApp booking instantly. Sedan, SUV, Luxury vehicles available."
+  keywords="book car rental Pune, car booking form, Balaji Travels booking, outstation cab booking Pune"
+>
+  <Navbar client:load />
+
+  <main id="main-content" class="min-h-screen bg-[#F8F9FC]">
+    <!-- Page hero -->
+    <div
+      class="relative pt-32 pb-16 overflow-hidden"
+      style="background: linear-gradient(160deg, #1A1A2E 0%, #16213E 60%, #0F3460 100%);"
+    >
+      <div
+        class="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style="background-image: radial-gradient(#C9A84C 1px, transparent 1px); background-size: 32px 32px;"
+        aria-hidden="true"
+      ></div>
+
+      <div class="max-w-3xl mx-auto px-5 md:px-8 text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 text-xs font-semibold uppercase tracking-widest"
+             style="background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35); color: #E8C97A;">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12" aria-hidden="true">
+            <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+          </svg>
+          Instant WhatsApp Booking
+        </div>
+        <h1 class="text-white font-bold mb-4" style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);">
+          {carParam ? `Book Your ${carParam}` : 'Book Your Premium Ride'}
+        </h1>
+        <p class="text-white/60 max-w-lg mx-auto leading-relaxed">
+          Fill in your trip details below and your booking request will be sent directly
+          to our WhatsApp for instant confirmation.
+        </p>
+
+        <!-- Breadcrumb -->
+        <nav class="mt-6 flex items-center justify-center gap-2 text-white/40 text-xs" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-[#C9A84C] transition-colors">Home</a>
+          <span aria-hidden="true">›</span>
+          <span class="text-[#C9A84C]">Book a Car</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Form card -->
+    <div class="max-w-3xl mx-auto px-5 md:px-8 py-12">
+      <!-- Trust badges -->
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        {[
+          { icon: '🔒', label: 'Secure', sub: 'No data stored' },
+          { icon: '⚡', label: 'Instant', sub: 'WhatsApp reply' },
+          { icon: '✅', label: 'Verified', sub: '1200+ bookings' },
+        ].map(({ icon, label, sub }) => (
+          <div class="card text-center py-4 px-3">
+            <div class="text-2xl mb-1" aria-hidden="true">{icon}</div>
+            <p class="font-semibold text-[#1A1A2E] text-sm">{label}</p>
+            <p class="text-[#5A6A8A] text-xs">{sub}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Form -->
+      <div class="card p-7 md:p-10">
+        <BookingForm client:load />
+      </div>
+
+      <!-- Bottom info -->
+      <div class="mt-8 text-center text-[#5A6A8A] text-sm space-y-2">
+        <p>
+          Need help? Call us directly:
+          <a href="tel:+919876543210" class="font-semibold text-[#C9A84C] ml-1 hover:text-[#A07830] transition-colors">
+            +91 98765 43210
+          </a>
+        </p>
+        <p class="text-xs text-[#aab0c2]">Available 24/7 · No advance payment required</p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
