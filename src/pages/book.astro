@@ -12,7 +12,7 @@ const carParam = Astro.url.searchParams.get('car') ?? '';
   description="Book your premium car rental with Balaji Travels in Bhubaneshwar. Fill in your journey details and send a WhatsApp booking instantly. Sedan, SUV, Luxury vehicles available."
   keywords="book car rental Bhubaneshwar, car booking form, Balaji Travels booking, outstation cab booking Bhubaneshwar, airport transfer Bhubaneshwar, Toyota Innova rental, tempo traveller Bhubaneswar"
 >
-  <Navbar client:load />
+  <Navbar client:load hideBookButton={true} />
 
   <main id="main-content" class="min-h-screen bg-[#F8F9FC]">
     <!-- Page hero -->

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Fleet", href: "#fleet" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "About", href: "/#about" },
+  { label: "Fleet", href: "/#fleet" },
+  { label: "Contact", href: "/#contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ hideBookButton = false }: { hideBookButton?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -19,12 +19,14 @@ export default function Navbar() {
   }, []);
 
   const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setOpen(false);
+    const hash = href.includes("#") ? href.substring(href.indexOf("#")) : "";
+    if (!hash) return;
 
-    const target = document.querySelector(href);
+    const target = document.querySelector(hash);
 
     if (target) {
+      e.preventDefault();
+      setOpen(false);
       target.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -95,24 +97,26 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="/book"
-            className="btn-gold text-sm px-6 py-3"
-            aria-label="Book a car now"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              width="16"
-              height="16"
-              aria-hidden="true"
+        {!hideBookButton && (
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="/book"
+              className="btn-gold text-sm px-6 py-3"
+              aria-label="Book a car now"
             >
-              <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
-            </svg>
-            Book Now
-          </a>
-        </div>
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="16"
+                height="16"
+                aria-hidden="true"
+              >
+                <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+              </svg>
+              Book Now
+            </a>
+          </div>
+        )}
 
         {/* Hamburger */}
         <button
@@ -168,13 +172,15 @@ export default function Navbar() {
             </a>
           ))}
 
-          <a
-            href="/book"
-            className="btn-gold mt-4 mb-4 justify-center"
-            aria-label="Book a car now"
-          >
-            Book Now
-          </a>
+          {!hideBookButton && (
+            <a
+              href="/book"
+              className="btn-gold mt-4 mb-4 justify-center"
+              aria-label="Book a car now"
+            >
+              Book Now
+            </a>
+          )}
         </div>
       </div>
     </header>
