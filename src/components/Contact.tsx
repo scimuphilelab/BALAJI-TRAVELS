@@ -1,6 +1,6 @@
 const PHONE = '+91 8658169299';
-const ALT_PHONE = '+91 7656071977';
-const WHATSAPP = '917656071977'
+const ALT_PHONE = '+91 8658169299';
+const WHATSAPP = '918658169299'
 const EMAIL = 'balajitravels2999@gmail.com';
 const ADDRESS = 'Beherasahi, Nayapalli, Bhubaneswar,Odisha,751012';
 const MAPS_URL = 'https://maps.app.goo.gl/puW9TsgjbtDCHjWJ7';

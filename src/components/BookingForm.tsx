@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { allVehicles } from '../data/vehicles';
 
-const ADMIN_WHATSAPP = '917656071977';
+const ADMIN_WHATSAPP = '918658169299';
 
 interface FormData {
   fullName: string;
@@ -252,14 +252,14 @@ _Sent via balajitravel.in_`;
           aria-live="polite"
         >
           <p className="text-xs font-semibold text-[#A07830] uppercase tracking-widest mb-3">Booking Summary</p>
-          <div className="grid grid-cols-2 gap-3 text-sm">
+          <div className="grid grid-cols-1 gap-3 text-sm">
             {form.car && (
               <div>
                 <span className="text-[#5A6A8A]">Vehicle:</span>
                 <span className="font-semibold text-[#1A1A2E] ml-1">{form.car}</span>
               </div>
             )}
-            {/* {form.pickUp && (
+            {form.pickUp && (
               <div>
                 <span className="text-[#5A6A8A]">Pickup:</span>
                 <span className="font-semibold text-[#1A1A2E] ml-1">{form.pickUp}</span>
@@ -270,7 +270,7 @@ _Sent via balajitravel.in_`;
                 <span className="text-[#5A6A8A]">To:</span>
                 <span className="font-semibold text-[#1A1A2E] ml-1">{form.destination}</span>
               </div>
-            )} */}
+            )}
             {form.journeyDate && (
               <div>
                 <span className="text-[#5A6A8A]">Date:</span>
