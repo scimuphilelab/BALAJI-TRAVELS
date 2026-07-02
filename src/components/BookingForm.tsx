@@ -119,7 +119,7 @@ export default function BookingForm() {
 ⏱️ *Duration:* ${form.duration}
 📏 *Approx KM:* ${form.approxKm || 'Not specified'}
 
-_Sent via balajitravel.in_`;
+_Sent via balajitravelss.in_`;
 
     const url = `https://wa.me/${ADMIN_WHATSAPP}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -203,12 +203,12 @@ _Sent via balajitravel.in_`;
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <InputField
-          id="pickUp" label="Pick Up From" placeholder="e.g. Rasulgarh, Bhubaneshwar"
+          id="pickUp" label="Pick Up From" placeholder="e.g. Rasulgarh, Bhubaneswar"
           value={form.pickUp} onChange={setField('pickUp')}
           error={errors.pickUp} required
         />
         <InputField
-          id="destination" label="Destination" placeholder="e.g. Airport, Bhubaneshwar"
+          id="destination" label="Destination" placeholder="e.g. Airport, Bhubaneswar"
           value={form.destination} onChange={setField('destination')}
           error={errors.destination} required
         />

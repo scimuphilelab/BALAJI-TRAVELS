@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balajitravelss.in/sitemap-index.xml
